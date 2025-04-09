@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente Digital para Idosos</title>
+    <!-- Bootstrap via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="font-size-normal">
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar bg-light py-2">
+        <div class="container d-flex justify-content-end align-items-center">
+            <div class="font-size-controls">
+                <span class="me-2"><i class="fas fa-text-height"></i> Tamanho da letra:</span>
+                <button id="decreaseFont" class="btn btn-sm btn-outline-secondary me-1" title="Diminuir letra">A-</button>
+                <button id="normalFont" class="btn btn-sm btn-outline-secondary me-1" title="Tamanho normal">A</button>
+                <button id="increaseFont" class="btn btn-sm btn-outline-secondary" title="Aumentar letra">A+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <h1 class="display-5">Assistente Virtual</h1>
+            <p class="lead">Ajudando você a navegar no mundo digital</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container my-4">
+        <!-- Área de Assistente -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card chat-card">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="mb-0"><i class="fas fa-robot me-2"></i> Assistente Virtual</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="chat-area" id="chatArea">
+                            <div class="message assistant">
+                                <div class="message-content">
+                                    Olá! Sou seu assistente virtual. Como posso ajudar você hoje?
+                                </div>
+                            </div>
+                            <!-- As mensagens da conversa aparecerão aqui -->
+                        </div>
+                        <div class="input-area mt-3">
+                            <div class="d-flex">
+                                <input type="text" id="userInput" class="form-control form-control-lg" placeholder="Digite sua pergunta...">
+                                <button id="voiceButton" class="btn btn-primary ms-2">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button id="sendButton" class="btn btn-success ms-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categorias -->
+        <h2 class="mb-3">Precisa de ajuda com:</h2>
+        <div class="row">
+            <div class="col-6 col-md-3 mb-3">
+                <div class="card text-center p-2 category-card" id="whatsapp-card">
+                    <i class="fab fa-whatsapp fa-3x text-success mb-2"></i>
+                    <h3>WhatsApp</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="card text-center p-2 category-card" id="banking-card">
+                    <i class="fas fa-university fa-3x text-primary mb-2"></i>
+                    <h3>Internet Banking</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="card text-center p-2 category-card" id="shopping-card">
+                    <i class="fas fa-shopping-cart fa-3x text-danger mb-2"></i>
+                    <h3>Compras Online</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <div class="card text-center p-2 category-card" id="security-card">
+                    <i class="fas fa-shield-alt fa-3x text-warning mb-2"></i>
+                    <h3>Segurança</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-light p-3 text-center">
+        <div class="container">
+            <p>Assistente Virtual para Inclusão Digital de Idosos - Protótipo</p>
+        </div>
+    </footer>
+
+    <!-- Modal para conteúdo de categoria -->
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalTitle">Título da Categoria</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="modalContent">
+                    <!-- Conteúdo dinâmico será inserido aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="helpButton">Preciso de ajuda</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
